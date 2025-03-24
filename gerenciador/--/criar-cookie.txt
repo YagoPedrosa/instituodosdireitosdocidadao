@@ -1,0 +1,27 @@
+
+
+		//LightBox com Cookie
+		$(window).on("load", function(){
+			if(document.cookie.indexOf("LBPOP=zswbK|}.J}1EyNL?&.$Q") === -1){
+				$('.lightBox').addClass("surgeLightBox").fadeIn();
+			}
+		})
+		
+		function fechaLightBox(event){
+			if(event.target === document.getElementById('lightBox') || event.target.classList.contains('fechaLightBox')) {
+				$('.lightBox').removeClass("surgeLightBox").fadeOut();
+			}
+		}
+
+		function whatsAppLightBox () {
+			criarCookie("LBPOP", "zswbK|}.J}1EyNL?&.$Q", "Tue, 01 Jan 2115 12:00:00 UTC");
+			window.open('https://www.bratburguer.com.br/brat_steakhouse.', '_blank');
+			$('.lightBox').removeClass("surgeLightBox").fadeOut();
+		}
+		
+		function criarCookie(nome, valor, expira){
+			var dtExpira = "expires=" + expira;
+			document.cookie = nome + "=" + valor + ";" + dtExpira + ";path=/";
+		}
+		//Fim do LightBox Com Cookie
+		
